@@ -7,7 +7,7 @@ function [x_min, N] = GSS(f, a, b, epsilon, varargin)
 % b    : tolerance
 % N    : number of iteration
 % % % % % % % % % % % % % % % % % % % % % % % %
-if(a > b), c = a; a = b; b = c; end
+if(a > b), c = a; a = b; b = c; clear c; end
 if(nargin < 4)
     epsilon = 1e-8;
 end
@@ -34,7 +34,7 @@ while true
         x2 = a + (1-rho) * (b-a);
     end
     
-    if(x2 - x1 < epsilon)
+    if(norm(x2 - x1) < epsilon)
         break
     end
     
