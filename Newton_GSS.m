@@ -9,7 +9,7 @@ for iter = 1 : max_iter
     
     alpha_k = GSS(@(alpha) f(x_k + alpha*p_k), a, b, gss_tol, varargin{1:end});
     x_k1 = x_k + alpha_k * p_k;
-    if abs(x_k - x_k1) < stop_tol
+    if norm(x_k - x_k1) < stop_tol
         x_k = x_k1;
         break
     end
