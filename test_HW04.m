@@ -47,7 +47,7 @@ newton_powel_counter_Hf = Hf_powel();
 
 %% Create report
 create_report('README_HW04.md', 'HW04 (Line-Search with GSS)', newton_powel_counter_f, newton_powel_counter_gf, newton_powel_counter_Hf, newton_powel_min_f, newton_powel_min_iter, newton_powel_min_x, newton_rosenbrock_counter_f, newton_rosenbrock_counter_gf, newton_rosenbrock_counter_Hf, newton_rosenbrock_min_f, newton_rosenbrock_min_iter, newton_rosenbrock_min_x, sd_powel_counter_f, sd_powel_counter_gf, sd_powel_min_f, sd_powel_min_iter, sd_powel_min_x, sd_rosenbrock_counter_f, sd_rosenbrock_counter_gf, sd_rosenbrock_min_f, sd_rosenbrock_min_iter, sd_rosenbrock_min_x);
-
+winopen('README_HW04.md');
 %% FUNCTIONS
 % %% CALC Rosenbrock
 % clc; syms x1 x2

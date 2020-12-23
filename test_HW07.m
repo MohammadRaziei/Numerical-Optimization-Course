@@ -2,7 +2,7 @@ clc; clear all; close all;
 % By @MohammadRaziei
 %% Rosenbrock : SD
 clc; f_rosenbrock; gf_rosenbrock; % reset counters
-stop_tol = 1e-5; c1 = 1e-5; c2 = 1e-5; 
+stop_tol = 1e-5; c1 = 1e-5; c2 = 1e-4; 
 f = @(x) f_rosenbrock(x(1), x(2));
 gf = @(x) gf_rosenbrock(x(1), x(2));
 x0 = [1;2];
@@ -12,7 +12,7 @@ sd_rosenbrock_counter_gf = gf_rosenbrock();
 
 %% Rosenbrock : Newton
 clc; f_rosenbrock; gf_rosenbrock; Hf_rosenbrock; % reset counters
-stop_tol = 1e-5; c1 = 1e-5; c2 = 1e-5; 
+stop_tol = 1e-5; c1 = 1e-5; c2 = 5e-1; 
 f  = @(x) f_rosenbrock(x(1), x(2));
 gf = @(x) gf_rosenbrock(x(1), x(2));
 Hf = @(x) Hf_rosenbrock(x(1), x(2));
@@ -25,7 +25,7 @@ newton_rosenbrock_counter_Hf = Hf_rosenbrock();
 
 %% Powel : SD
 clc; f_powel; gf_powel; % reset counters
-stop_tol = 1e-5; c1 = 1e-5; c2 = 1e-5; 
+stop_tol = 1e-5; c1 = 1e-5; c2 = 1e-3; 
 f = @(x) f_powel(x(1), x(2), x(3), x(4));
 gf = @(x) gf_powel(x(1), x(2), x(3), x(4));
 x0 = [1;2;2;2];
@@ -35,7 +35,7 @@ sd_powel_counter_gf = gf_powel();
 
 %% Powel : Newton
 clc; f_powel; gf_powel; Hf_powel; % reset counters
-stop_tol = 1e-5; c1 = 1e-5; c2 = 1e-5; 
+stop_tol = 1e-5; c1 = 1e-5; c2 = 1e-1; 
 f  = @(x) f_powel(x(1), x(2), x(3), x(4));
 gf = @(x) gf_powel(x(1), x(2), x(3), x(4));
 Hf = @(x) Hf_powel(x(1), x(2), x(3), x(4));
@@ -47,6 +47,7 @@ newton_powel_counter_Hf = Hf_powel();
 
 %% Create report
 create_report('README_HW07.md', 'HW07 (Line-Search)', newton_powel_counter_f, newton_powel_counter_gf, newton_powel_counter_Hf, newton_powel_min_f, newton_powel_min_iter, newton_powel_min_x, newton_rosenbrock_counter_f, newton_rosenbrock_counter_gf, newton_rosenbrock_counter_Hf, newton_rosenbrock_min_f, newton_rosenbrock_min_iter, newton_rosenbrock_min_x, sd_powel_counter_f, sd_powel_counter_gf, sd_powel_min_f, sd_powel_min_iter, sd_powel_min_x, sd_rosenbrock_counter_f, sd_rosenbrock_counter_gf, sd_rosenbrock_min_f, sd_rosenbrock_min_iter, sd_rosenbrock_min_x);
+winopen('README_HW07.md');
 %% FUNCTIONS
 % %% CALC Rosenbrock
 % clc; syms x1 x2
